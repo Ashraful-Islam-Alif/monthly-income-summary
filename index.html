@@ -34,23 +34,24 @@
                             <section class="">
                                 <div>
                                     <h5>Income</h5>
-                                    <p>Income: <input type="text"></p>
+                                    <p>Income: <input id="income-money" type="text"></p>
                                     <h5>Expenses</h5>
-                                    <p>Food: <input type="text"></p>
-                                    <p>Rent: <input type="text"></p>
-                                    <p>Clothes: <input type="text"></p>
-                                    <button type="button" class="btn btn-primary">Calculate</button>
+                                    <p>Food: <input id="food-expenses" type="text"></p>
+                                    <p>Rent: <input id="rent-expenses" type="text"></p>
+                                    <p>Clothes: <input id="clothes-expenses" type="text"></p>
+                                    <button id="calculate-button" type="button"
+                                        class="btn btn-primary">Calculate</button>
                                 </div>
                                 <div class="col mt-4 mb-4">
-                                    <h5>Total Expenses: <span>5500</span></h5>
-                                    <h5>Balance: <span>4500</span></h5>
+                                    <h5>Total Expenses: <span id="total-expenses">5500</span></h5>
+                                    <h5>Balance: <span id="balance-after-total-expenses">4500</span></h5>
                                 </div>
-                                <p>Save: <input type="text"> % <button type="button"
+                                <p>Save: <input id="input-save" type="text"> % <button id="save-button" type="button"
                                         class="btn btn-primary">Save</button></p>
 
                                 <div class="col mt-4 mb-4">
-                                    <h5>Saving Amount: <span>5500</span></h5>
-                                    <h5>Remaining Balance: <span>4500</span></h5>
+                                    <h5>Saving Amount: <span id="saving-amount">2000</span></h5>
+                                    <h5>Remaining Balance: <span id="remaining-balance">2500</span></h5>
                                 </div>
                             </section>
                         </div>
