@@ -1,0 +1,11 @@
+body{
+    margin:auto 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+#head-color{
+    color: rgba(211, 52, 52, 0.692);
+}
+#summary{
+    color: rgba(210, 105, 30, 0.712);
+}
