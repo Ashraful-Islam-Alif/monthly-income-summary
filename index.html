@@ -19,6 +19,7 @@
 
 <body>
     <header>
+        <!-- Heading  -->
         <h1 id="head-color" class="text-center mt-5">Monthly Income <span id="summary">Summary</span></h1>
     </header>
 
@@ -26,44 +27,44 @@
         <section>
             <div class="container overflow-hidden">
                 <div class="row gx-5 g-4 d-flex justify-content-center align-items-center ">
+                    <!-- image part -->
                     <div class=" col col-lg-6 col-sm-12">
                         <div class="p-3 border"><img class="img-fluid" src="./images/Money-Summary.png" alt=""></div>
                     </div>
+                    <!-- input part -->
                     <div class="col col-lg-6 col-sm-12 container-fluid mt-5 mb-5">
                         <div class="p-3 border text-center">
-                            <section class="">
-                                <div>
-                                    <h5>Income</h5>
-                                    <p>Income: <input id="income-money" type="text"></p>
-                                    <h5>Expenses</h5>
-                                    <p>Food: <input id="food-expenses" type="text"></p>
-                                    <p>Rent: <input id="rent-expenses" type="text"></p>
-                                    <p>Clothes: <input id="clothes-expenses" type="text"></p>
-                                    <button id="calculate-button" type="button"
-                                        class="btn btn-primary">Calculate</button>
-                                    <div id="error-message" class="notify-section">
-                                        <p id="expenses-message" class="notify"> Your expenses is more than your Income,
-                                            Please reduce your expense</p>
-                                        <p id="negative-message" class="notify"> Please give positive numbers</p>
-                                    </div>
-                                </div>
-
-                                <div class="col mt-4 mb-4">
-                                    <h5>Total Expenses:<span id="total-expenses">00</span>TK</h5>
-                                    <h5>Balance:<span id="balance-after-total-expenses">00</span>TK</h5>
-                                </div>
-                                <p>Save: <input id="input-save" type="text"> % <button id="save-button" type="button"
-                                        class="btn btn-primary">Save</button></p>
+                            <div>
+                                <h5>Income</h5>
+                                <p>Income: <input id="income-money" type="text"></p>
+                                <h5>Expenses</h5>
+                                <p>Food: <input id="food-expenses" type="text"></p>
+                                <p>Rent: <input id="rent-expenses" type="text"></p>
+                                <p>Clothes: <input id="clothes-expenses" type="text"></p>
+                                <button id="calculate-button" type="button" class="btn btn-primary">Calculate</button>
                                 <div id="error-message" class="notify-section">
-                                    <p id="saving-message" class="notify"> Your Saving is more than your Income,
-                                        Please watch your current balance</p>
+                                    <p id="expenses-message" class="notify"> Your expenses is more than your Income,
+                                        Please reduce your expense</p>
+                                    <p id="negative-message" class="notify"> Please give positive numbers</p>
                                 </div>
-                                <div class="col mt-4 mb-4">
-                                    <h5>Saving Amount:<span id="saving-amount">00</span>TK</h5>
-                                    <h5>Remaining Balance:<span id="remaining-balance">00</span>TK</h5>
-                                </div>
-
-                            </section>
+                            </div>
+                            <!-- Expenses -->
+                            <div class="col mt-4 mb-4">
+                                <h5>Total Expenses: <span id="total-expenses">00</span>TK</h5>
+                                <h5>Balance: <span id="balance-after-total-expenses">00</span>TK</h5>
+                            </div>
+                            <!-- save percentage -->
+                            <p>Save: <input id="input-save" type="text"> % <button id="save-button" type="button"
+                                    class="btn btn-primary m-4">Save</button></p>
+                            <div id="error-message" class="notify-section">
+                                <p id="saving-message" class="notify"> Your Saving is more than your Income,
+                                    Please watch your current balance</p>
+                            </div>
+                            <!-- final amount and balance -->
+                            <div class="col mt-4 mb-4">
+                                <h5>Saving Amount: <span id="saving-amount">00</span>TK</h5>
+                                <h5>Remaining Balance: <span id="remaining-balance">00</span>TK</h5>
+                            </div>
                         </div>
                     </div>
                 </div>
