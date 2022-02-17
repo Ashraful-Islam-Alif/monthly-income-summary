@@ -9,3 +9,13 @@ body{
 #summary{
     color: rgba(210, 105, 30, 0.712);
 }
+.notify {
+    color: red;
+    text-align: center;
+   
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 5px 20px;
+    display: none;
+}

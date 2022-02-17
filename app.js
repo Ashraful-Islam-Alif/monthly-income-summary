@@ -5,10 +5,27 @@ function incomeExpensesCalculation() {
     const clothesExpenses = document.getElementById('clothes-expenses').value
     const totalExpenses = document.getElementById('total-expenses')
     let totalExpensesCalculation = parseFloat(foodExpenses) + parseFloat(rentExpenses) + parseFloat(clothesExpenses)
-    totalExpenses.innerText = totalExpensesCalculation
+    //totalExpenses.innerText = totalExpensesCalculation
     const balanceAfterTotalExpenses = document.getElementById('balance-after-total-expenses')
-    balanceAfterTotalExpenses.innerText = incomeMoneyValue - totalExpensesCalculation
-    return balanceAfterTotalExpenses.innerText
+    const expensesMessage = document.getElementById('expenses-message')
+    const negativeMessage = document.getElementById('negative-message')
+    if (incomeMoneyValue > totalExpensesCalculation && incomeMoneyValue > 0 && foodExpenses > 0 && rentExpenses > 0 && clothesExpenses > 0) {
+        totalExpenses.innerText = totalExpensesCalculation
+        balanceAfterTotalExpenses.innerText = incomeMoneyValue - totalExpensesCalculation
+        expensesMessage.style.display = 'none'
+        negativeMessage.style.display = 'none'
+        return balanceAfterTotalExpenses.innerText
+
+    }
+    else if (incomeMoneyValue < 0 || foodExpenses < 0 || rentExpenses < 0 || clothesExpenses < 0) {
+        negativeMessage.style.display = 'block'
+        expensesMessage.style.display = 'none'
+    }
+    else {
+        negativeMessage.style.display = 'none'
+        expensesMessage.style.display = 'block'
+    }
+
 }
 function incomeMoneyCalculation() {
     const incomeMoney = document.getElementById('income-money').value
