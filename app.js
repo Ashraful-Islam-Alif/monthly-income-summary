@@ -8,20 +8,31 @@ function incomeExpensesCalculation() {
     let totalExpensesCalculation = parseFloat(foodExpenses) + parseFloat(rentExpenses) + parseFloat(clothesExpenses) //calculating total expenses
     const expensesMessage = document.getElementById('expenses-message')
     const negativeMessage = document.getElementById('negative-message')
+    const numberMessageExpenses = document.getElementById('number-message-expenses')
     //error checking value and negative number
     if (incomeMoneyValue > totalExpensesCalculation && incomeMoneyValue > 0 && foodExpenses > 0 && rentExpenses > 0 && clothesExpenses > 0) {
         totalExpenses.innerText = totalExpensesCalculation
         balanceAfterTotalExpenses.innerText = incomeMoneyValue - totalExpensesCalculation
         expensesMessage.style.display = 'none'
         negativeMessage.style.display = 'none'
+        numberMessageExpenses.style.display = 'none'
         return balanceAfterTotalExpenses.innerText
     }
     else if (incomeMoneyValue < 0 || foodExpenses < 0 || rentExpenses < 0 || clothesExpenses < 0) {
         negativeMessage.style.display = 'block'
         expensesMessage.style.display = 'none'
+        numberMessageExpenses.style.display = 'none'
+    }
+    else if (isNaN(incomeMoneyValue) || isNaN(foodExpenses) || isNaN(rentExpenses) || isNaN(clothesExpenses)) { //if  input value string givestring 
+        negativeMessage.style.display = 'none'
+        expensesMessage.style.display = 'none'
+        numberMessageExpenses.style.display = 'block'
+
+
     }
     else {
         negativeMessage.style.display = 'none'
+        numberMessageExpenses.style.display = 'none'
         expensesMessage.style.display = 'block'
     }
 
@@ -45,12 +56,21 @@ document.getElementById('save-button').addEventListener('click', function () {
     const remainingBalanceText = document.getElementById('remaining-balance')
     const remainingBalance = incomeExpensesCalculation() - saveAmount
     const savingMessage = document.getElementById('saving-message')
+    const numberMessage = document.getElementById('number-message')
     //checking error of save percentages
     if (saveAmount < balanceAfterTotalExpenses.innerText) {
         remainingBalanceText.innerText = remainingBalance
-        savingMessage.style.display = 'none' //error display will not shown initially
+        savingMessage.style.display = 'none'
+        numberMessage.style.display = 'none'
+    }
+
+    else if (isNaN(saveInput)) { //if  input value string givestring 
+        numberMessage.style.display = 'block'
+        savingMessage.style.display = 'none'
+
     }
     else {
+        numberMessage.style.display = 'none'
         savingMessage.style.display = 'block' // condition not satisfy error message will show
     }
 
