@@ -29,7 +29,7 @@
                     <div class=" col col-lg-6 col-sm-12">
                         <div class="p-3 border"><img class="img-fluid" src="./images/Money-Summary.png" alt=""></div>
                     </div>
-                    <div class="col col-lg-6 col-sm-12 container-fluid">
+                    <div class="col col-lg-6 col-sm-12 container-fluid mt-5 mb-5">
                         <div class="p-3 border text-center">
                             <section class="">
                                 <div>
@@ -54,7 +54,10 @@
                                 </div>
                                 <p>Save: <input id="input-save" type="text"> % <button id="save-button" type="button"
                                         class="btn btn-primary">Save</button></p>
-
+                                <div id="error-message" class="notify-section">
+                                    <p id="saving-message" class="notify"> Your Saving is more than your Income,
+                                        Please watch your current balance</p>
+                                </div>
                                 <div class="col mt-4 mb-4">
                                     <h5>Saving Amount:<span id="saving-amount">00</span>TK</h5>
                                     <h5>Remaining Balance:<span id="remaining-balance">00</span>TK</h5>

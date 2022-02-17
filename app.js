@@ -1,3 +1,4 @@
+const balanceAfterTotalExpenses = document.getElementById('balance-after-total-expenses')
 function incomeExpensesCalculation() {
     const incomeMoneyValue = incomeMoneyCalculation()
     const foodExpenses = document.getElementById('food-expenses').value
@@ -5,8 +6,6 @@ function incomeExpensesCalculation() {
     const clothesExpenses = document.getElementById('clothes-expenses').value
     const totalExpenses = document.getElementById('total-expenses')
     let totalExpensesCalculation = parseFloat(foodExpenses) + parseFloat(rentExpenses) + parseFloat(clothesExpenses)
-    //totalExpenses.innerText = totalExpensesCalculation
-    const balanceAfterTotalExpenses = document.getElementById('balance-after-total-expenses')
     const expensesMessage = document.getElementById('expenses-message')
     const negativeMessage = document.getElementById('negative-message')
     if (incomeMoneyValue > totalExpensesCalculation && incomeMoneyValue > 0 && foodExpenses > 0 && rentExpenses > 0 && clothesExpenses > 0) {
@@ -15,7 +14,6 @@ function incomeExpensesCalculation() {
         expensesMessage.style.display = 'none'
         negativeMessage.style.display = 'none'
         return balanceAfterTotalExpenses.innerText
-
     }
     else if (incomeMoneyValue < 0 || foodExpenses < 0 || rentExpenses < 0 || clothesExpenses < 0) {
         negativeMessage.style.display = 'block'
@@ -31,6 +29,7 @@ function incomeMoneyCalculation() {
     const incomeMoney = document.getElementById('income-money').value
     return incomeMoney;
 }
+function expensesCalculation() { }
 
 document.getElementById('calculate-button').addEventListener('click', function () {
     incomeExpensesCalculation()
@@ -44,6 +43,16 @@ document.getElementById('save-button').addEventListener('click', function () {
     savingAmount.innerText = saveAmount
     const remainingBalanceText = document.getElementById('remaining-balance')
     const remainingBalance = incomeExpensesCalculation() - saveAmount
-    remainingBalanceText.innerText = remainingBalance
+    const savingMessage = document.getElementById('saving-message')
+
+    if (saveAmount < balanceAfterTotalExpenses.innerText) {
+        remainingBalanceText.innerText = remainingBalance
+        savingMessage.style.display = 'none'
+    }
+    else {
+        savingMessage.style.display = 'block'
+
+
+    }
 
 })
