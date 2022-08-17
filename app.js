@@ -57,21 +57,29 @@ document.getElementById('save-button').addEventListener('click', function () {
     const remainingBalance = incomeExpensesCalculation() - saveAmount
     const savingMessage = document.getElementById('saving-message')
     const numberMessage = document.getElementById('number-message')
+    const negativeNumber = document.getElementById('negative-number')
     //checking error of save percentages
-    if (saveAmount < balanceAfterTotalExpenses.innerText) {
+    if (saveAmount < balanceAfterTotalExpenses.innerText && saveInput < 0) {
         remainingBalanceText.innerText = remainingBalance
         savingMessage.style.display = 'none'
         numberMessage.style.display = 'none'
+        negativeNumber.style.display = 'none'
     }
-
-    else if (isNaN(saveInput)) { //if  input value string givestring 
-        numberMessage.style.display = 'block'
+    else if (saveInput < 0) {
+        negativeNumber.style.display = 'block'
         savingMessage.style.display = 'none'
+        numberMessage.style.display = 'none'
+    }
+    else if (isNaN(saveInput)) { //if  input value string givestring 
+        savingMessage.style.display = 'none'
+        negativeNumber.style.display = 'none'
+        numberMessage.style.display = 'block'
 
     }
+
     else {
         numberMessage.style.display = 'none'
+        negativeNumber.style.display = 'none'
         savingMessage.style.display = 'block' // condition not satisfy error message will show
     }
-
 })
